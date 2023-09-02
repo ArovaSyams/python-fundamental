@@ -6,12 +6,13 @@ email = input("your email = ")
 # . = any char
 # + = pengulangan mulai dari 1
 # * = pengulangan mulai dari 0
+# ? = kondisional untuk string sebelumnya
 # ^ = match start of string
 # $ = match end of string
 # [^@] = semua char kecuali @
 # [a-zA-Z0-9] = include all set writed
 # \w = all letter, numbers, underscores
-if re.search(r"^\w+@\w+\.(com|edu|gov)$", email, re.IGNORECASE):
+if re.search(r"^\w+@(\w+\.)?\w+\.(com|edu|gov)$", email, re.IGNORECASE):
     print("Valid")
 else:
     print("Invalid")
